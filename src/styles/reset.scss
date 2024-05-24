@@ -1,0 +1,72 @@
+//这个文件负责重置样式
+body {
+  font-family: var(--zf-font-family);
+  font-weight: 400;
+  font-size: var(--zf-font-size--base);
+  color: var(--zf-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--zf-color-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--zf-color-primary-light-3);
+  }
+
+  &:active {
+    color: var(--zf-color-primary-dark-2);
+  }
+}
+
+h1 {
+  font-size: calc(var(--zf-font-size-base) + 6px);
+}
+
+h2 {
+  font-size: calc(var(--zf-font-size-base) + 4px);
+}
+
+h3 {
+  font-size: calc(var(--zf-font-size-base) + 4px);
+}
+
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+}
+
+p {
+
+  line-height: 1.8;
+
+  &:first-child {
+    margin-top: 0
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+sup,
+sub {
+  font-size: calc(var(--zf-font-size-base) - 1px);
+}
+
+small {
+  font-size: calc(var(--zf-font-size-base) - 2px);
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--zf-border-color-lighter);
+}

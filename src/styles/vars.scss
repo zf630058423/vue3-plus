@@ -1,0 +1,88 @@
+// 该文件主要是负责定义全局样式变量， 例如颜色、字体大小等
+$colors: (
+  primary: #409eff,
+  success: #67c23a,
+  warning: #e6a23c,
+  danger: #f56c6c,
+  info: #909399
+);
+
+:root {
+
+  //接下来我们需要来生成主题色和不同亮度的颜色
+  @each $val, $color in $colors {
+    --zf-color-#{$val}: #{$color};
+
+    //还要生成不同亮度的颜色
+    @for $i from 1 through 4 {
+      --zf-color-#{$val}-light-#{2*$i+1}: #{mix(#fff, $color, ((2 * $i + 1) * 10 * 1%))};
+    }
+
+    //dark和 light8 因为不符合上面的规律，我们在下面单独生成
+    --zf-color-#{$val}-light-8: #{mix(#fff, $color, 80* 1%)};
+    --zf-color-#{$val}-dark-2: #{mix(#000, $color, 20* 1%)};
+  }
+
+  //接下来，还有一些其他的颜色变量
+  //对应dehiElementUI的中性色
+  --zf-color-white: #fff;
+  --zf-color-black: #000;
+  --zf-bg-color: #ffffff;
+  --zf-bg-color-page: #f2f3f5;
+  --zf-bg-color-overlay: #ffffff;
+  --zf-text-color-primary: #303133;
+  --zf-text-color-regular: #606266;
+  --zf-text-color-secondary: #909399;
+  --zf-text-color-placeholder: #a8abb2;
+  --zf-text-color-disabled: #c0c4cc;
+  --zf-border-color: #dcdfe6;
+  --zf-border-color-light: #e4e7ed;
+  --zf-border-color-lighter: #ebeef5;
+  --zf-border-color-extra-light: #f2f6fc;
+  --zf-border-color-dark: #cdd0d6;
+  --zf-fill-color: #f0f2f5;
+  --zf-fill-color-light: #f5f7fa;
+  --zf-fill-color-lighter: #fafafa;
+  --zf-fill-color-extra-light: #fafcff;
+  --zf-fill-color-dark: #ebedf0;
+  --zf-fill-color-darker: #ebe8eb;
+  --zf-fill-color-blank: #fffff;
+
+
+  //和border相关的变量
+  --zf-border-width: 1px;
+  --zf-border-style: solid;
+  --zf-border-color-hover: (--zf-text-color-disabled);
+  --zf-border: var(--zf-border-width) var(--zf-border-style) var(--zf-border-color);
+  --zf-border-radius-base: 4px;
+  --zf-border-radius-small: 2px;
+  --zf-border-radius-round: 20px;
+  --zf-border-radius-circle: 100%;
+
+  //和font相关的变量
+  --zf-font-size-extra-large: 20px;
+  --zf-font-size-large: 18px;
+  --zf-font-size-medium:16px;
+  --zf-font-size-base: 14px;
+  --zf-font-size-small: 13px;
+  --zf-font-size-extra-small: 12px;
+  --zf-font-family: 'Helvetica Neue',
+  Helvetica,
+  'PingFang SC',
+  'Hiragino Sans GB',
+  'Microsoft YaHei',
+  '\5fae\8f6f\96c5\9ed1',
+  Arial,
+  sans-seri;
+  --zf-font-weight-primary: 500;
+
+  //和disabled相关的变量
+  --zf-disabled-bg-color: var(--zf-fill-color-light);
+  --zf-disabled-text-color: var(--zf-text-color-placeholder);
+  --zf-disabled-borer-color: var(--zf-borer-color-light);
+
+
+  //和transition相关的变量
+  --zf-transition-duration:0.3s;
+  --zf-transition-duration-fast: 0.2s;
+}

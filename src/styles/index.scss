@@ -1,0 +1,6 @@
+// 样式的入口文件，回头会引入其他的所有样式
+@import './vars.scss';
+@import './reset.scss';
+
+//引入组件相关的样式
+@import './components/icon.scss'
