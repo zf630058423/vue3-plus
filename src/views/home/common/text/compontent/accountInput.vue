@@ -4,7 +4,8 @@
     <el-checkbox class="border-style" v-model="checkIcon">图标</el-checkbox>
     <el-checkbox class="border-style" v-model="checkPwd">密码</el-checkbox>
     <div :class="{ radius: check }" class="account" :style="accountStyle">
-      <i class="el-icon-user account_icon" type="el-icon-user" v-if="checkIcon"></i>
+      <!-- <i class="el-icon-user account_icon" type="el-icon-user" v-if="checkIcon"></i> -->
+      <Zf-Icon class="account_icon" size="xs" icon="fa-user" v-if="checkIcon" />
       <span class="account_text" v-else>{{ text }}：</span>
       <el-input
         class="account_input"
@@ -70,6 +71,10 @@ const style = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+:deep(.el-input__inner) {
+  border: 0;
+}
+
 .border-style {
   margin: 8px;
 }
@@ -104,7 +109,9 @@ const style = computed(() => {
   border-radius: 24px;
 }
 
-:deep(.el-input__inner) {
-  border: 0;
+:deep() {
+  .el-input__inner {
+    border: 0;
+  }
 }
 </style>
