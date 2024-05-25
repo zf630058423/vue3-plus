@@ -1,13 +1,7 @@
 <template>
   <div class="link-input">
-    <el-input
-      ref="input"
-      v-on="$listeners"
-      v-bind="$attrs"
-      v-model="currentValue"
-      @blur="blur"
-      :style="style"
-    >
+    <!-- v-on="$listeners" -->
+    <el-input ref="input" v-bind="$attrs" v-model="currentValue" @blur="blur" :style="style">
     </el-input>
     <div class="link" v-if="currentValue && linkStatus" @click="linkCancel" :style="linkStyle">
       <el-tooltip
@@ -22,7 +16,7 @@
   </div>
 </template>
 <script setup>
-import { ref, watch, computed, onMounted } from 'vue'
+import { ref, watch, computed, onMounted, nextTick, useAttrs } from 'vue'
 
 /**
  * 文本框组件包含连接文字或数字
@@ -51,6 +45,7 @@ const props = defineProps({
   },
 })
 
+const attrs = useAttrs()
 const input = ref()
 const linkStatus = ref(false)
 const currentValue = ref('')
@@ -82,7 +77,7 @@ const linkStyle = computed(() => {
 })
 
 onMounted(() => {
-  $nextTick(() => {
+  nextTick(() => {
     input.value.$refs.input.style.height = props.height + 'px'
   })
 })
@@ -92,7 +87,7 @@ const blur = () => {
 }
 
 const linkCancel = () => {
-  if ($attrs.disabled) return
+  if (attrs.disabled) return
   linkStatus.value = !linkStatus.value
   input.value.focus()
 }

@@ -2,17 +2,20 @@
   <div class="copy-code-container">
     <div class="copy-container flex-row">
       <el-tooltip content="复制代码" placement="top-start">
-        <i class="el-icon-copy-document" @click="handleCopy(code, $event)"></i>
+        <!-- <i class="el-icon-copy-document" @click="handleCopy(code, $event)"></i> -->
+        <Zf-Icon icon="fa-copy" @click="handleCopy(code, $event)" />
       </el-tooltip>
 
       <el-tooltip :content="showCodeContent" placement="top-start">
-        <i @click="handeShowCode" class="el-icon-arrow-right"></i>
+        <!-- <i @click="handeShowCode" class="el-icon-arrow-right"></i> -->
+        <Zf-Icon icon="fa-angle-right" @click="handeShowCode" />
       </el-tooltip>
     </div>
     <div class="code-palce-container" :class="{ 'show-code': showCode }">
-      <div class="code-box" v-highlight>
+      <div class="code-box">
         <pre>
-          <code class="javascirpt lang-javascript" >{{ code }}</code>
+          <!-- <code class="javascirpt lang-javascript" >{{ code }}</code> -->
+          <highlightjs class="javascirpt lang-javascript" :autodetect="false" language='JavaScript' :code="code" />
         </pre>
       </div>
     </div>

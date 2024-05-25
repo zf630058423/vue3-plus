@@ -20,9 +20,15 @@ importers:
       '@fortawesome/vue-fontawesome':
         specifier: ^3.0.6
         version: 3.0.6(@fortawesome/fontawesome-svg-core@6.5.2)(vue@3.4.27)
+      '@highlightjs/vue-plugin':
+        specifier: ^2.1.0
+        version: 2.1.0(highlight.js@11.9.0)(vue@3.4.27)
       element-plus:
         specifier: ^2.7.3
         version: 2.7.3(vue@3.4.27)
+      highlight.js:
+        specifier: ^11.9.0
+        version: 11.9.0
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -63,6 +69,9 @@ importers:
       vite:
         specifier: ^5.2.8
         version: 5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)
+      vite-plugin-raw:
+        specifier: ^1.0.3
+        version: 1.0.3
 
 packages:
 
@@ -387,6 +396,12 @@ packages:
     peerDependencies:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       vue: '>= 3.0.0 < 4'
+
+  '@highlightjs/vue-plugin@2.1.0':
+    resolution: {integrity: sha512-E+bmk4ncca+hBEYRV2a+1aIzIV0VSY/e5ArjpuSN9IO7wBJrzUE2u4ESCwrbQD7sAy+jWQjkV5qCCWgc+pu7CQ==}
+    peerDependencies:
+      highlight.js: ^11.0.1
+      vue: ^3
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -911,6 +926,10 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  highlight.js@11.9.0:
+    resolution: {integrity: sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==}
+    engines: {node: '>=12.0.0'}
+
   html-tags@3.3.1:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
@@ -1234,6 +1253,9 @@ packages:
     peerDependenciesMeta:
       file-loader:
         optional: true
+
+  vite-plugin-raw@1.0.3:
+    resolution: {integrity: sha512-9jWSN6RUlSiM7sd5tr/x9R7vQUs54K+FtNm1EpaAXTtu9mg7DbvEqtMSudIC432y4ZXIM8tMAtb3jw3dVHSOUQ==}
 
   vite@5.2.11:
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
@@ -1605,6 +1627,11 @@ snapshots:
   '@fortawesome/vue-fontawesome@3.0.6(@fortawesome/fontawesome-svg-core@6.5.2)(vue@3.4.27)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.5.2
+      vue: 3.4.27
+
+  '@highlightjs/vue-plugin@2.1.0(highlight.js@11.9.0)(vue@3.4.27)':
+    dependencies:
+      highlight.js: 11.9.0
       vue: 3.4.27
 
   '@jridgewell/gen-mapping@0.3.5':
@@ -2172,6 +2199,8 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  highlight.js@11.9.0: {}
+
   html-tags@3.3.1: {}
 
   immutable@4.3.6: {}
@@ -2474,6 +2503,8 @@ snapshots:
       webpack: 5.91.0
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.91.0)
+
+  vite-plugin-raw@1.0.3: {}
 
   vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0):
     dependencies:

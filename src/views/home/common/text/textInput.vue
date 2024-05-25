@@ -16,22 +16,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import RowLayout from '@/components/rowLayout/index.vue'
 import AmountInput from './compontent/amountInput.vue'
 import PercenInput from './compontent/percenInput.vue'
 import LinkInput from './compontent/linkInput.vue'
 import AccountInput from './compontent/accountInput.vue'
 //导出为模版字符串
-import amountInputCode from '!!raw-loader!./compontent/amountInput.vue'
-import percenInputCode from '!!raw-loader!./compontent/percenInput.vue'
-import linkInputCode from '!!raw-loader!./compontent/linkInput.vue'
-import accountInputCode from '!!raw-loader!./compontent/accountInput.vue'
-
-// const amountInputCode = ref(amountInputCode)
-// const percenInputCode = ref(percenInputCode)
-// const linkInputCode = ref(linkInputCode)
-// const accountInputCode = ref(accountInputCode)
+import amountInputCode from './compontent/amountInput.vue?raw'
+import percenInputCode from './compontent/percenInput.vue?raw'
+import linkInputCode from './compontent/linkInput.vue?raw'
+import accountInputCode from './compontent/accountInput.vue?raw'
 </script>
 <style lang="scss" scoped>
 .row_line {
