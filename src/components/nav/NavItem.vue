@@ -1,14 +1,14 @@
 <template>
   <!-- 无子集 -->
   <el-menu-item :index="props.basePath" v-if="!item.children">
-    <el-icon></el-icon>
-    <span>{{ props.item.title }}</span>
+    <i class="el-icon-menu"></i>
+    <span>{{ props.item.name }}</span>
   </el-menu-item>
   <!-- 有子集 -->
   <el-sub-menu :index="props.basePath" v-else>
     <template #title>
-      <el-icon></el-icon>
-      <span>{{ props.item.title }}</span>
+      <i class="el-icon-menu"></i>
+      <span>{{ props.item.name }}</span>
     </template>
     <NavItem v-for="sub in props.item.children" :key="sub.url" :basePath="sub.url" :item="sub" />
   </el-sub-menu>
@@ -25,3 +25,11 @@ const props = defineProps({
   },
 })
 </script>
+<style lang="scss" scoped>
+.el-submenu {
+  text-align: left;
+}
+.el-menu-item {
+  text-align: left;
+}
+</style>

@@ -1,24 +1,69 @@
 <template>
-  <div id="module">
+  <el-container>
+    <!-- 左侧导航 -->
+    <NavMenu />
+    <!-- 右侧主体 -->
     <el-container>
-      <!-- <el-aside width="200px">Aside</el-aside> -->
-      <!-- 左侧导航 -->
-      <NavMenu />
-      <!-- 右侧主题 -->
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>
-          <RouterView />
-        </el-main>
-        <el-footer>Footer</el-footer>
-      </el-container>
+      <el-header>
+        <!-- 面包屑 -->
+        <Breadcrumb />
+        <!-- 退出按钮 -->
+        <el-button class="exit" type="primary" @click="goBack()">退出</el-button>
+      </el-header>
+      <el-main>
+        <RouterView />
+      </el-main>
+      <el-footer>Footer</el-footer>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import NavMenu from './navMenu.vue'
+import NavMenu from '@/components/nav/navMenu.vue'
+import Breadcrumb from '@/components/breadCrumb/index.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const title = ref('首页')
+
+const goBack = () => {
+  router.push('/login')
+}
 </script>
+<style lang="scss" scoped>
+:deep(.el-header) {
+  background: #cedff5;
+  border-bottom: 1px solid #eee;
+}
+
+.el-header,
+.el-footer {
+  background: #fff;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: #d3dce6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-main {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.container-content {
+  // margin-bottom: 40px;
+  margin-bottom: 0;
+  height: calc(100% - 60px);
+}
+</style>
