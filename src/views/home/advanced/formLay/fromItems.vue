@@ -1,6 +1,6 @@
 <template>
   <div class="from-items">
-    <el-form
+    <ElForm
       :model="formData"
       ref="FormItems_rules"
       :inline="true"
@@ -8,65 +8,65 @@
       label-width="auto"
       class="demo-ruleForm"
     >
-      <el-form-item
+      <ElFormItem
         v-for="(item, index) in props.formItems"
         :key="index"
         :label="item.label + '：'"
         :prop="item.model"
       >
-        <el-input
+        <ElInput
           v-if="item.type == 'ipt'"
           :placeholder="'请填写' + item.label"
           v-model="formData[item.model]"
           style="width: 380px"
-        ></el-input>
+        ></ElInput>
 
-        <el-input
+        <ElInput
           v-if="item.type == 'textarea'"
           :placeholder="'请填写' + item.label"
           type="textarea"
           v-model="formData[item.model]"
           style="width: 380px"
-        ></el-input>
+        ></ElInput>
 
-        <el-select
+        <ElSelect
           v-else-if="item.type == 'select'"
           :placeholder="'请选择' + item.label"
           v-model="formData[item.model]"
           @change="item.func ? onAction(formData[item.model]) : ''"
           style="width: 380px"
         >
-          <el-option
+          <ElOption
             v-for="(it, index) in item.opts"
             :key="index"
             :label="it.label"
             :value="it.value"
-          ></el-option>
-        </el-select>
+          ></ElOption>
+        </ElSelect>
 
-        <el-switch
+        <ElSwitch
           v-else-if="item.type == 'switch'"
           v-model="formData[item.model]"
           style="width: 380px"
-        ></el-switch>
+        ></ElSwitch>
 
-        <el-radio-group v-else-if="item.type == 'radio'" v-model="formData[item.model]">
-          <el-radio v-for="(it, index) in item.opts" :key="index" :label="it.value">{{
+        <ElRadioGroup v-else-if="item.type == 'radio'" v-model="formData[item.model]">
+          <ElRadio v-for="(it, index) in item.opts" :key="index" :label="it.value">{{
             it.label
-          }}</el-radio>
-        </el-radio-group>
+          }}</ElRadio>
+        </ElRadioGroup>
 
-        <el-checkbox-group v-else-if="item.type == 'checkbox'" v-model="formData[item.model]">
-          <el-checkbox
+        <ElCheckboxGroup v-else-if="item.type == 'checkbox'" v-model="formData[item.array]">
+          <ElCheckbox
             v-for="(it, index) in item.opts"
             :key="index"
-            :label="it.value"
-            :name="item.name"
-            >{{ it.label }}</el-checkbox
-          >
-        </el-checkbox-group>
+            :label="it.label"
+            :name="it.name"
+            :value="it.value"
+          ></ElCheckbox>
+        </ElCheckboxGroup>
 
-        <el-date-picker
+        <ElDatePicker
           v-else-if="item.type == 'date'"
           :start-placeholder="item.pickerDate.type == 'daterange' ? '开始日期' : ''"
           :end-placeholder="item.pickerDate.type == 'daterange' ? '结束日期' : ''"
@@ -75,14 +75,27 @@
           :type="item.pickerDate.type"
           placeholder="选择日期"
         >
-        </el-date-picker>
-      </el-form-item>
-    </el-form>
+        </ElDatePicker>
+      </ElFormItem>
+    </ElForm>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import {
+  ElForm,
+  ElInput,
+  ElRadioGroup,
+  ElRadio,
+  ElDatePicker,
+  ElOption,
+  ElSelect,
+  ElSwitch,
+  ElCheckboxGroup,
+  ElCheckbox,
+  ElFormItem,
+} from 'element-plus'
 
 const props = defineProps({
   formItems: Array,

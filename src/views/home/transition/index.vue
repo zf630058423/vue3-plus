@@ -17,13 +17,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import RowLayout from '@/components/rowLayout/index.vue'
 import TransitionList from './TransitionList.vue'
 import TransitionList2 from './TransitionList2.vue'
 import TransitionTest from './TransitionTest.vue'
-import transitionListCode from '!!raw-loader!./TransitionList.vue'
-import transitionListCode2 from '!!raw-loader!./TransitionList2.vue'
-import transitionTestCode from '!!raw-loader!./TransitionTest.vue'
+import transitionListCode from './TransitionList.vue?raw'
+import transitionListCode2 from './TransitionList2.vue?raw'
+import transitionTestCode from './TransitionTest.vue?raw'
 
 const remark = ref('右下角查看代码 →')
 </script>

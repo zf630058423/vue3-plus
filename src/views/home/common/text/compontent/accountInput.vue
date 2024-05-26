@@ -98,10 +98,6 @@ const style = computed(() => {
     margin-left: 18px;
     display: inline-block;
   }
-
-  &_input {
-    margin-bottom: 6px;
-  }
 }
 
 .radius {

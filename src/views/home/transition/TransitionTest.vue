@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="btns">
-      <el-button size="mini" @click="prev">上一张</el-button>
-      <el-button size="mini" @click="next">下一张</el-button>
+      <el-button @click="prev">上一张</el-button>
+      <el-button @click="next">下一张</el-button>
     </div>
     <Transition :name="`${direction}-image`">
       <img class="image" :src="curImage" :key="curIndex" />

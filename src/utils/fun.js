@@ -101,11 +101,11 @@ function getTofixed(number, n) {
  */
 function debounce(fn, delay) {
   let timer = null;
-  return function() {
+  return function () {
     const context = this;
     const args = arguments;
     clearTimeout(timer);
-    timer = setTimeout(function() {
+    timer = setTimeout(function () {
       fn.apply(context, args);
     }, delay);
   };
@@ -114,7 +114,7 @@ function debounce(fn, delay) {
 function throttle(fn, delay) {
   let timer = null;
   let lastTime = 0;
-  return function() {
+  return function () {
     const context = this;
     const args = arguments;
     const nowTime = Date.now();
@@ -123,7 +123,7 @@ function throttle(fn, delay) {
       lastTime = nowTime;
     } else {
       clearTimeout(timer);
-      timer = setTimeout(function() {
+      timer = setTimeout(function () {
         fn.apply(context, args);
         lastTime = nowTime;
       }, delay - (nowTime - lastTime));

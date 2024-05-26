@@ -14,12 +14,12 @@
 <script setup>
 import { ref } from 'vue'
 import RowLayout from '@/components/rowLayout/index.vue'
-import singlePatternCode from '!!raw-loader!./patternJs/single-pattern' //单例模式
-import commonPatternCode from '!!raw-loader!./patternJs/common-pattern' //命令模式
-import strategyPatternCode from '!!raw-loader!./patternJs/strategy-pattern' //策略模式
-import observerPatternCode from '!!raw-loader!./patternJs/observer-pattern' //观察者模式
-import publishSubscriberPatternCode from '!!raw-loader!./patternJs/publish-subscriber-pattern' //发布订阅者模式
-import proxyPatternCode from '!!raw-loader!./patternJs/proxy-pattern' //代理模式
+import singlePatternCode from './patternJs/single-pattern.js?raw' //单例模式
+import commonPatternCode from './patternJs/common-pattern.js?raw' //命令模式
+import strategyPatternCode from './patternJs/strategy-pattern.js?raw' //策略模式
+import observerPatternCode from './patternJs/observer-pattern.js?raw' //观察者模式
+import publishSubscriberPatternCode from './patternJs/publish-subscriber-pattern.js?raw' //发布订阅者模式
+import proxyPatternCode from './patternJs/proxy-pattern.js?raw' //代理模式
 
 const remark = ref('右下角查看代码 →')
 const dataArray = ref([])

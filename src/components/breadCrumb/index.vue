@@ -24,9 +24,10 @@ onMounted(() => {
 })
 
 const getBreadcrumb = (matched) => {
-  // if (matched.length && matched[1].name === 'index') {
-  //   matched = [{ path: '/home', name: 'home', met: { title: '首页' } }]
-  // }
+  console.log('matched===:', matched)
+  if (matched.length && matched[1].name === 'index') {
+    matched = [{ path: '/home', name: 'home', met: { title: '首页' } }]
+  }
   lists.value = matched
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <el-button size="mini" @click="addNumber">add number</el-button>
-    <el-button size="mini" @click="delNumber">del number</el-button>
-    <el-button size="mini" @click="shuffle">随机排序</el-button>
+    <ElButton @click="addNumber">add number</ElButton>
+    <ElButton @click="delNumber">del number</ElButton>
+    <ElButton @click="shuffle">随机排序</ElButton>
     <transition-group tag="ul" name="nums">
       <li v-for="item in nums" :key="item">{{ item }}</li>
     </transition-group>

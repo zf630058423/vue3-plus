@@ -33,11 +33,11 @@ import FormTitle from './formTitle.vue'
 import Col3Layout from './col3Layout.vue'
 import Col3TtLayout from './col3TtLayout.vue'
 import Col4Layout from './col4Layout.vue'
-import formTitleCode from '!!raw-loader!./formTitle.vue'
-import colLayoutCode from '!!raw-loader!./colLayout.vue'
-import col3LayoutCode from '!!raw-loader!./col3Layout.vue'
-import col3TtLayoutCode from '!!raw-loader!./col3TtLayout.vue'
-import col4LayoutCode from '!!raw-loader!./col4Layout.vue'
+import formTitleCode from './formTitle.vue?raw'
+import colLayoutCode from './colLayout.vue?raw'
+import col3LayoutCode from './col3Layout.vue?raw'
+import col3TtLayoutCode from './col3TtLayout.vue?raw'
+import col4LayoutCode from './col4Layout.vue?raw'
 
 const remark = ref('右下角查看代码 →')
 const dataForm = ref({
@@ -46,10 +46,4 @@ const dataForm = ref({
   projectName: '',
   projectAddress: '',
 })
-
-// const formTitleCode = ref(formTitleCode)
-// const col3LayoutCode = ref(col3LayoutCode)
-// const colLayoutCode = ref(colLayoutCode)
-// const col3TtLayoutCode = ref(col3TtLayoutCode)
-// const col4LayoutCode = ref(col4LayoutCode)
 </script>

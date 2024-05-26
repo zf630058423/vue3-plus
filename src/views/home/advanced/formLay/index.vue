@@ -16,7 +16,7 @@ import { ref } from 'vue'
 
 import RowLayout from '@/components/rowLayout/index.vue'
 import FromItems from './fromItems.vue'
-import fromItemsCode from '!!raw-loader!./fromItems.vue'
+import fromItemsCode from './fromItems.vue?raw'
 
 const remark = ref('右下角查看代码 →')
 
@@ -63,6 +63,7 @@ const formItems = ref([
     label: '喜欢的运动',
     type: 'checkbox',
     model: 'sports',
+    array: [],
     opts: [
       {
         label: '篮球',

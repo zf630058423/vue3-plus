@@ -20,13 +20,9 @@ import RowLayout from '@/components/rowLayout/index.vue'
 import LinearGradient from './linearGradient.vue'
 import RadialGradient from './radialGradient.vue'
 import ConicGradient from './conicGradient.vue'
-import linearGradientCode from '!!raw-loader!./linearGradient.vue'
-import radialGradientCode from '!!raw-loader!./radialGradient.vue'
-import conicGradientCode from '!!raw-loader!./conicGradient.vue'
+import linearGradientCode from './linearGradient.vue?raw'
+import radialGradientCode from './radialGradient.vue?raw'
+import conicGradientCode from './conicGradient.vue?raw'
 
 const remark = ref('右下角查看代码 →')
-
-// const linearGradientCode = ref(linearGradientCode)
-// const radialGradientCode = ref(radialGradientCode)
-// const conicGradientCode = ref(conicGradientCode)
 </script>

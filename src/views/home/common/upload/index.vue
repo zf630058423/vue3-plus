@@ -1,24 +1,20 @@
 <template>
   <div class="text-input content_overflow">
-    <row-layout
-      title="图片上传"
-      remark="简易图片上传"
-      :source="ImageUploadCode"
-    >
-      <image-upload></image-upload>
-    </row-layout>
+    <RowLayout title="图片上传" remark="简易图片上传" :source="ImageUploadCode">
+      <ImageUpload></ImageUpload>
+    </RowLayout>
   </div>
 </template>
 
 <script>
-import RowLayout from "../../../compontent/rowLayout/rowLayout.vue";
-import ImageUpload from "./compontent/imageUpload.vue";
+import RowLayout from '@/components/rowLayout/index.vue'
+import ImageUpload from './compontent/imageUpload.vue'
 
 //导出为模版字符串
-import ImageUploadCode from "!!raw-loader!./compontent/imageUpload.vue";
+import ImageUploadCode from './compontent/imageUpload.vue?raw'
 
 export default {
-  name: "upLoad",
+  name: 'upLoad',
   components: {
     RowLayout,
     ImageUpload,
@@ -26,12 +22,11 @@ export default {
   data() {
     return {
       ImageUploadCode, //金额组件代码
-    };
+    }
   },
-};
+}
 </script>
 <style lang="scss" scoped>
-@import "@/styles/contentFlow.scss"; // 引入scss文件
 .row_line {
   margin: 8px 16px;
 }

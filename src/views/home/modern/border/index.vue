@@ -26,21 +26,11 @@ import BorderBox1 from './borderBox1.vue'
 import BorderBox2 from './borderBox2.vue'
 import BorderBox3 from './borderBox3.vue'
 import BorderBox4 from './borderBox4.vue'
-import bordeRadiusCode from '!!raw-loader!./borderRadius.vue'
-import borderBox1Code from '!!raw-loader!./borderBox1.vue'
-import borderBox2Code from '!!raw-loader!./borderBox2.vue'
-import borderBox3Code from '!!raw-loader!./borderBox3.vue'
-import borderBox4Code from '!!raw-loader!./borderBox4.vue'
+import bordeRadiusCode from './borderRadius.vue?raw'
+import borderBox1Code from './borderBox1.vue?raw'
+import borderBox2Code from './borderBox2.vue?raw'
+import borderBox3Code from './borderBox3.vue?raw'
+import borderBox4Code from './borderBox4.vue?raw'
 
 const remark = ref('右下角查看代码 →')
-// const bordeRadiusCode = ref(bordeRadiusCode)
-
-// const borderBox1Code = ref(borderBox1Code)
-// const borderBox2Code = ref(borderBox2Code)
-// const borderBox3Code = ref(borderBox3Code)
-// const borderBox4Code = ref(borderBox4Code)
 </script>
-
-<style lang="scss" scoped>
-@import '@/styles/contentFlow.scss'; // 引入scss文件
-</style>

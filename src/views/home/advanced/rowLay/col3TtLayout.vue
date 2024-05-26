@@ -14,6 +14,7 @@
 <script setup>
 import { ref } from 'vue'
 import ColLayout from './colLayout.vue'
+import { ElForm, ElFormItem, ElInput } from 'element-plus'
 
 const dataForm = ref({
   code: '',

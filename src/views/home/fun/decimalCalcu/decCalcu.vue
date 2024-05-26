@@ -3,14 +3,14 @@
     <div class="dicimal_content">
       <span class="dicimal_span">
         <span>保留：</span>
-        <el-input-number
+        <ElInputNumber
           style="height: 31px; line-height: 31px; width: 130px"
           v-model="num"
           @change="handleChange"
           :min="1"
           :max="20"
           label="描述文字"
-        ></el-input-number>
+        ></ElInputNumber>
         位
       </span>
     </div>
@@ -22,11 +22,11 @@
         @change="num1Change"
         :decimalNum="num"
       ></AmountInput>
-      <el-select class="dicimal_select" v-model="selValue" @change="change">
-        <el-option v-for="op in options" :value="op.value" :label="op.label" :key="op.id">{{
+      <ElSelect class="dicimal_select" v-model="selValue" @change="change">
+        <ElOption v-for="op in options" :value="op.value" :label="op.label" :key="op.id">{{
           op.label
-        }}</el-option>
-      </el-select>
+        }}</ElOption>
+      </ElSelect>
       <AmountInput
         :value="num2"
         :width="width"
@@ -43,6 +43,7 @@ import { ref } from 'vue'
 import inputFun from '@/utils/fun.js'
 import AmountInput from '../../common/text/compontent/amountInput.vue'
 import { fnNumAdd, fnNumSub, fnNumMulti, fnNumDiv } from './decimalCalcu.js'
+import { ElInputNumber, ElOption, ElSelect } from 'element-plus'
 
 const width = ref(100)
 const num = ref(2)
@@ -78,8 +79,9 @@ const change = (e) => {
 }
 
 const totalMethods = (e) => {
+  console.log('e:', e)
   const decimalData = {
-    1: fnNumAdd(num1.value, num2.value),
+    1: fnNumAdd(num1.value.toString(), num2.value.toString()),
     2: fnNumSub(num1.value.toString(), num2.value.toString()),
     3: fnNumMulti(num1.value.toString(), num2.value.toString()),
     4: fnNumDiv(num1.value.toString(), num2.value.toString()),
@@ -106,9 +108,6 @@ const totalMethods = (e) => {
     margin-right: 16px;
     display: flex;
     flex-direction: row;
-
-    span {
-    }
   }
 
   &_content {

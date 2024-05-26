@@ -1,4 +1,5 @@
 <template>
+  <div>sfa</div>
   <el-form ref="dataForm" :model="dataForm" label-width="170px">
     <ColLayout title="项目信息" :cols="3">
       <el-form-item slot="col_1" prop="code" label="单据编号：">
@@ -17,6 +18,7 @@
 <script setup>
 import { ref } from 'vue'
 import ColLayout from './colLayout.vue'
+import { ElForm, ElFormItem, ElInput } from 'element-plus'
 
 const dataForm = ref({
   code: '',

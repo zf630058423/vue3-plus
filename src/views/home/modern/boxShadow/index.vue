@@ -10,7 +10,7 @@
 import { ref } from 'vue'
 import RowLayout from '@/components/rowLayout/index.vue'
 import BoxShadow from './boxShadow.vue'
-import boxShadowCode from '!!raw-loader!./boxShadow.vue'
+import boxShadowCode from './boxShadow.vue?raw'
 
 const remark = ref('右下角查看代码 →')
 // const boxShadowCode = ref(boxShadowCode)

@@ -36,6 +36,9 @@ const goBack = () => {
 :deep(.el-header) {
   background: #cedff5;
   border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .el-header,
@@ -59,10 +62,10 @@ const goBack = () => {
   text-align: center;
   overflow: hidden;
   padding: 8px;
+  height: calc(100% - 120px);
 }
 
 .container-content {
-  // margin-bottom: 40px;
   margin-bottom: 0;
   height: calc(100% - 60px);
 }

@@ -2,23 +2,24 @@
   <div class="row-layout">
     <FormTitle v-if="title" :title="title" :text="text"></FormTitle>
     <div class="form-layout-row" :style="marginStyle">
-      <el-row :gutter="gutter">
-        <el-col
+      <ElRow :gutter="gutter">
+        <ElCol
           :span="spanCol(cIndex)"
           :offset="getOffset(col)"
           :key="cIndex"
           v-for="(col, cIndex) in cols"
         >
           <slot :name="`col_${col}`"></slot>
-        </el-col>
-      </el-row>
+        </ElCol>
+      </ElRow>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import FormTitle from './formTitle.vue'
+import { ElRow, ElCol } from 'element-plus'
 
 const props = defineProps({
   //是否存在标题

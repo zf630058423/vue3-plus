@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    // redirect: '/index',
+    redirect: '/index',
     meta: { title: '首页' },
     component: () => import('../views/home/index.vue'),
     children: [
@@ -16,7 +16,7 @@ const routes = [
         path: '/index', //首页
         name: '/index',
         meta: { title: '首页' },
-        component: () => import('../views/home/index/index.vue'),
+        component: () => import('../views/home/main/index.vue'),
       },
       {
         path: "/guide",
@@ -69,15 +69,15 @@ const routes = [
           {
             path: "/advanced/rowLay",
             name: "rowLay",
-            meta: { title: '行布局' },
+            meta: { title: '表单动态列布局' },
             component: () => import("../views/home/advanced/rowLay/index.vue"),
           },
           {
             path: "/advanced/formLay",
             name: "formLay",
-            meta: { title: '表单布局' },
+            meta: { title: '动态表单' },
             component: () => import("../views/home/advanced/formLay/index.vue"),
-          },
+          }
         ],
       },
       {

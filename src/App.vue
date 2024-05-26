@@ -17,8 +17,7 @@ import { RouterView } from 'vue-router'
       </nav>
     </div>
   </header> -->
-  <!-- <RouterView /> -->
-  <router-view></router-view>
+  <RouterView />
 </template>
 
 <style scoped></style>
