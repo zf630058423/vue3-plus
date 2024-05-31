@@ -1,0 +1,58 @@
+// 首先针对这个样式类里面，定义了一系列的样式变量
+.zf-botton {
+  --zf-button-font-weight: var(--zf-font-weight-primary);
+  --zf-botton-border-color: var(--zf-border-color);
+  --zf-botton-bg-color: var(--zf-fill-color-blank);
+  --zf-botton-text-color: var(--zf-text-color-regular);
+  --zf-botton-disabled-text-color: var(--zf-disabled-text-color);
+  --zf-botton-disabled-bg-color: var(--zf-fill-color-blank);
+  --zf-botton-disabled-border-color: var(--zf-border-color-light);
+  --zf-botton-hover-text-color: var(--zf-color-primary);
+  --zf-botton-hover-bg-color: var(--zf-color-primary-light-9);
+  --zf-botton-hover-border-color: var(--zf-color-primary-light-7);
+  --zf-botton-active-text-color: var(--zf-button-hover-text-color);
+  --zf-botton-active-border-color: var(--zf-color-primary);
+  --zf-botton-active-bg-color: var(--zf-button-hover-bg-color);
+  --zf-botton-outline-color: var(--zf-color-primary-light-5);
+  --zf-botton-active-color: var(--zf-tet-color-primary);
+}
+
+.zf-botton {
+  // 接下来在来书写基本的样式
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 40px;
+  background-color: var(--zf-button-bg-color);
+  border: var(--zf-border);
+  border-color: var(--zf-botton-border-color);
+  color: var(--zf-button-text-color);
+  appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: var(--zf-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  padding: 12px 20px;
+  font-size: var(--zf-font-size-base);
+  border-radius: var(--zf-boder-radius-base);
+
+  &:hover,
+  &:focus {
+    color: var(--zf-button-hover-text-color);
+    border-color: var(--zf-button-hover-border-color);
+    background-color: var(--zf-button-hover-bg-color);
+    outline: none;
+  }
+
+  &:active {
+    color: var(--zf-button-active-text-color);
+    border-color: var(--zf-botton-active-border-color);
+    background-color: var(--zf-button-active-bg-color);
+    outline: none;
+  }
+}

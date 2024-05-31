@@ -8,7 +8,8 @@
         <!-- 面包屑 -->
         <Breadcrumb />
         <!-- 退出按钮 -->
-        <el-button class="exit" type="primary" @click="goBack()">退出</el-button>
+        <!-- <el-button class="exit" type="primary" @click="goBack()">退出</el-button> -->
+        <RightHeader />
       </el-header>
       <el-main>
         <RouterView />
@@ -21,6 +22,7 @@
 <script setup>
 import { ref } from 'vue'
 import NavMenu from '@/components/nav/navMenu.vue'
+import RightHeader from '@/components/header/rightHeader.vue'
 import Breadcrumb from '@/components/breadCrumb/index.vue'
 import { useRouter } from 'vue-router'
 

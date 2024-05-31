@@ -41,11 +41,17 @@ const routes = [
         ],
       },
       {
-        path: "/common", //常用组件
+        path: "/common", //常用组件 
         name: "common",
         meta: { title: '常用组件' },
         component: () => import("../views/home/common/index.vue"),
         children: [
+          {
+            path: "/common/zfIcon", //封装Icon组件
+            name: "zfIcon",
+            meta: { title: '封装Icon组件' },
+            component: () => import("../views/home/common/icon/index.vue"),
+          },
           {
             path: "/common/textInput", //文本框组件
             name: "textInput",

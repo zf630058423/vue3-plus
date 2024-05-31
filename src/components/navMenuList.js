@@ -19,6 +19,7 @@ export const menuList = [
     url: "/common",
     level: 1,
     children: [
+      { name: "封装Icon组件", url: "/common/zfIcon", level: 2 },
       { name: "输入框", url: "/common/textInput", level: 2 },
       // { name: "上传", url: "/common/upload", level: 2 },
     ],

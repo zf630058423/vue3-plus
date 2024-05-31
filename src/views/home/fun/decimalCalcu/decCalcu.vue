@@ -42,7 +42,7 @@
 import { ref } from 'vue'
 import inputFun from '@/utils/fun.js'
 import AmountInput from '../../common/text/compontent/amountInput.vue'
-import { fnNumAdd, fnNumSub, fnNumMulti, fnNumDiv } from './decimalCalcu.js'
+import { math } from './math'
 import { ElInputNumber, ElOption, ElSelect } from 'element-plus'
 
 const width = ref(100)
@@ -79,12 +79,11 @@ const change = (e) => {
 }
 
 const totalMethods = (e) => {
-  console.log('e:', e)
   const decimalData = {
-    1: fnNumAdd(num1.value.toString(), num2.value.toString()),
-    2: fnNumSub(num1.value.toString(), num2.value.toString()),
-    3: fnNumMulti(num1.value.toString(), num2.value.toString()),
-    4: fnNumDiv(num1.value.toString(), num2.value.toString()),
+    1: math.add(num1.value, num2.value),
+    2: math.sub(num1.value, num2.value),
+    3: math.mul(num1.value, num2.value),
+    4: math.div(num1.value, num2.value),
   }
   total.value = inputFun.getTofixed(decimalData[e], num.value)
 }
