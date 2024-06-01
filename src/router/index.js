@@ -59,6 +59,12 @@ const routes = [
             component: () => import("../views/home/common/text/textInput.vue"),
           },
           {
+            path: "/common/pinia", //文本框组件
+            name: "pinia",
+            meta: { title: 'pinia使用' },
+            component: () => import("../views/home/common/pinia/index.vue"),
+          },
+          {
             path: "/common/upload", //文件上传组件
             name: "upload",
             meta: { title: '文件上传组件' },

@@ -1,4 +1,5 @@
 import './assets/main.scss'
+// import ElementPlus from 'element-plus'
 
 //引入依赖和语言
 import 'highlight.js/styles/stackoverflow-light.css'
@@ -37,6 +38,7 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 //注册自定义组件
 app.component('Zf-Icon', Icon)
 
+// app.use(ElementPlus)
 app.use(hljsVuePlugin)
 app.use(createPinia())
 app.use(router)

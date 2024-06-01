@@ -21,6 +21,7 @@ export const menuList = [
     children: [
       { name: "封装Icon组件", url: "/common/zfIcon", level: 2 },
       { name: "输入框", url: "/common/textInput", level: 2 },
+      { name: 'pinia使用', url: "/common/pinia", level: 2 },
       // { name: "上传", url: "/common/upload", level: 2 },
     ],
   },
