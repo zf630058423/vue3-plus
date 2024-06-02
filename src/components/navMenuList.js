@@ -21,8 +21,7 @@ export const menuList = [
     children: [
       { name: "封装Icon组件", url: "/common/zfIcon", level: 2 },
       { name: "输入框", url: "/common/textInput", level: 2 },
-      { name: 'pinia使用', url: "/common/pinia", level: 2 },
-      // { name: "上传", url: "/common/upload", level: 2 },
+
     ],
   },
   {
@@ -52,7 +51,13 @@ export const menuList = [
       { name: "gradient", url: "/modern/gradient", level: 2 },
     ],
   },
-  { name: "类库", url: "/lib", level: 1 },
+  {
+    name: "类库插件", url: "/lib", level: 1,
+    children: [
+      { name: 'pinia使用', url: "/lib/pinia", level: 2 },
+      { name: 'echarts', url: "/lib/echarts", level: 2 },
+    ]
+  },
   {
     name: "函数",
     url: "/fun",

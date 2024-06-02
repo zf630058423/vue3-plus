@@ -8,10 +8,10 @@
       :source="piniaCode"
     >
       <el-tabs v-model="activeName" @tab-click="taClick">
-        <el-tab-pane label="选项式风格(options)" name="options">
+        <el-tab-pane label="计数器-选项式风格(options)" name="options">
           <Counter></Counter>
         </el-tab-pane>
-        <el-tab-pane label="组合式风格(composition)" name="composition">
+        <el-tab-pane label="待办事项-组合式风格(composition)" name="composition">
           <ToDoList></ToDoList>
         </el-tab-pane>
       </el-tabs>

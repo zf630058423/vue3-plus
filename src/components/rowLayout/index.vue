@@ -1,7 +1,7 @@
 <template>
   <div class="row-layout">
     <div class="row-layout_title row_line">{{ props.title }}</div>
-    <div class="row-layout_remark row_line">备注： {{ props.remark }}</div>
+    <div class="row-layout_remark row_line" v-if="props.remark">备注： {{ props.remark }}</div>
     <div class="row-layout_compontent row_content">
       <slot></slot>
       <CodeReview :code="props.source"></CodeReview>

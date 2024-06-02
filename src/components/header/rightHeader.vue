@@ -11,17 +11,20 @@
 </template>
 
 <script setup>
-// import { mapActions } from 'vuex'
 import { menuList } from '../navMenuList'
 import { ref, onMounted } from 'vue'
+import { menuStore } from '@/store/menu' //使用pinia存储数据
+
+import { useRouter } from 'vue-router'
+
+const store = menuStore()
+
+const router = useRouter()
+
+const { menuVuex } = store
 
 const restaurants = ref([])
 const inputValue = ref('')
-const vueValue = ref('2')
-const vueVersion = ref([
-  { id: 2, label: 'vue2.0', value: '2' },
-  { id: 3, label: 'vue3.0', value: '3' },
-])
 
 const menus = ref([])
 
@@ -70,8 +73,8 @@ const createFilter = (queryString) => {
 
 const handleSelect = (item) => {
   const { url, name, level } = item
-  // this.menuVuex({ name, url, level })
-  // this.$router.push({ path: url })
+  menuVuex({ name, url, level })
+  router.push({ path: url })
 }
 </script>
 

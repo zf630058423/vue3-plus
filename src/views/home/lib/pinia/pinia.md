@@ -101,3 +101,67 @@ const { increment, asynIncrement, asyncDecrement } = store
 store.$reset: 重置state
 store.$patch: 变更state
 ```
+
+### 组合式风格
+
+#### 组合式风格和 Vue3 中使用的方法时一样的，通过 ref 或者 reactive 来定义仓库数据。通过普通的方法来操作仓库数据。无论是数据还是方法最终需要导出出去。通过 computed 来做 getter
+
+```
+import { defineStore } from 'pinia'
+import { reactive, computed } from 'vue'
+
+//引入其他仓库
+import { useCounterStore } from './userCounterStore'
+
+//组合api风格
+export const userListStore = defineStore('list', () => {
+  const counterStore = useCounterStore()
+  //创建仓库数据，类似于state
+  const list = reactive({
+    items: [
+      { text: '学习pinia', isCompleted: true },
+      { text: '打羽毛球', isCompleted: false },
+      { text: '玩游戏', isCompleted: true },
+    ],
+    counter: 100
+  })
+
+  const doubleCounter = computed(() => {
+    return list.counter * 2
+  })
+
+  //该getter使用的是其他仓库的数据
+  const otherCounter = computed(() => {
+    return counterStore.doubleCount * 3
+  })
+
+  //添加新的事项
+  function addItem(newItem) {
+    list.items.push({
+      text: newItem,
+      isCompleted: false
+    })
+  }
+
+  //切换事项对应的完成状态
+  const compltedHandle = (index) => {
+    list.items[index].isCompleted = !list.items[index].isCompleted
+  }
+
+  //删除待办事项对应下标的某一项
+  function deleteItem(index) {
+    list.items.splice(index, 1)
+  }
+
+  return {
+    list,
+    doubleCounter,
+    otherCounter,
+    addItem,
+    compltedHandle,
+    deleteItem
+  }
+})
+```
+
+#### 在一个仓库中，可以使用其他仓库的 getter 数据。两种风格都可以使用。

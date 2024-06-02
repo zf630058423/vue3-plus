@@ -59,12 +59,6 @@ const routes = [
             component: () => import("../views/home/common/text/textInput.vue"),
           },
           {
-            path: "/common/pinia", //文本框组件
-            name: "pinia",
-            meta: { title: 'pinia使用' },
-            component: () => import("../views/home/common/pinia/index.vue"),
-          },
-          {
             path: "/common/upload", //文件上传组件
             name: "upload",
             meta: { title: '文件上传组件' },
@@ -121,8 +115,22 @@ const routes = [
       {
         path: "/lib", //类库
         name: "lib",
-        meta: { title: '类库' },
+        meta: { title: '类库插件' },
         component: () => import("../views/home/lib/index.vue"),
+        children: [
+          {
+            path: "/lib/pinia",
+            name: "pinia",
+            meta: { title: 'pinia使用' },
+            component: () => import("../views/home/lib/pinia/index.vue"),
+          },
+          {
+            path: "/lib/echarts",
+            name: "echarts",
+            meta: { title: 'echarts' },
+            component: () => import("../views/home/lib/echarts/index.vue"),
+          },
+        ]
       },
       {
         path: "/fun", //函数
