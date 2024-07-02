@@ -21,7 +21,7 @@ export const menuList = [
     children: [
       { name: "封装Icon组件", url: "/common/zfIcon", level: 2 },
       { name: "输入框", url: "/common/textInput", level: 2 },
-
+      { name: 'treeCascader组件', url: '/common/treeCascader', level: 2 }
     ],
   },
   {

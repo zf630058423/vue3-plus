@@ -59,6 +59,12 @@ const routes = [
             component: () => import("../views/home/common/text/textInput.vue"),
           },
           {
+            path: "/common/treeCascader", //tree下拉组件
+            name: "treeCascader",
+            meta: { title: 'treeCascader组件' },
+            component: () => import("../views/home/common/treeCascader/index.vue"),
+          },
+          {
             path: "/common/upload", //文件上传组件
             name: "upload",
             meta: { title: '文件上传组件' },
