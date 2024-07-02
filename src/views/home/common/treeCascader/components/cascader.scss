@@ -1,0 +1,190 @@
+$dTime: 0.2s;
+$disabledBg: rgb(245, 247, 250);
+$dBxShadow: 0 0 0 1px #e4e7ed inset;
+$dWH: 100%;
+
+//禁用时
+@mixin disabledStyle($bg, $bs) {
+  cursor: not-allowed;
+  color: #a8abb2;
+
+  @if $bg and $bs {
+    background: $bg;
+    box-shadow: $bs;
+  }
+}
+
+//超出一行宽度显示省略号
+@mixin ellipNowrap() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin iconRotate($deg) {
+  transform: rotate($deg);
+  transition: $dTime;
+  color: rgb(168, 171, 178);
+}
+
+@mixin heightStyle($h) {
+  height: $h;
+  line-height: $h;
+}
+
+@mixin animationScale($num) {
+  transition: $dTime;
+  opacity: $num;
+  transform: scaleY($num);
+}
+
+@mixin displayFlex($justifyContent: space-between, $alignItems: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+.cascader {
+  display: inline-block;
+  position: relative;
+  width: $dWH;
+  @include heightStyle(26px);
+  border: none;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #2f3132;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgb(220, 223, 230) inset;
+
+  &:hover {
+    box-shadow: 0 0 0 1px #c0c4cc inset;
+  }
+
+  &.select {
+    border: 1px solid #0059ff;
+    box-shadow: none;
+  }
+
+  &.disabled {
+    @include disabledStyle($disabledBg, $dBxShadow);
+  }
+
+  .cascader-title {
+    @include displayFlex();
+    cursor: pointer;
+    height: $dWH;
+
+    &.disabled {
+      @include disabledStyle(null, null);
+    }
+
+    .span-input {
+      @include ellipNowrap();
+    }
+  }
+
+  .mask-list {
+    z-index: 800;
+  }
+
+  .cascader-pop.expand {
+    @include animationScale(1);
+  }
+
+  .cascader-pop {
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    z-index: 100;
+    display: inline-block;
+    min-width: 130px;
+    max-height: 210px;
+    font-size: 13px;
+    transform-origin: top;
+    @include animationScale(0);
+
+    .cascader-mask {
+      position: absolute;
+      top: 12px;
+      left: 0px;
+      z-index: 105;
+      background: #ffffff;
+      border-radius: 4px;
+      display: inline-block;
+      min-width: $dWH;
+      max-height: 200px;
+      transition: $dTime;
+      overflow: auto;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+      border: 1px solid #e4e7ed;
+      color: #606266;
+
+      &_ul {
+        margin: 0;
+        padding: 6px 0;
+        list-style: none;
+        box-sizing: border-box;
+
+        &_li {
+          cursor: pointer;
+          padding: 0 10px;
+          outline: none;
+          @include heightStyle(30px);
+          @include displayFlex();
+          @include ellipNowrap();
+
+          &:hover {
+            background: rgb(245, 247, 250);
+          }
+        }
+      }
+    }
+  }
+
+  .cascader-pop:nth-child(1)::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    left: 45px;
+    position: absolute;
+    border: 1px solid #ede5e5;
+    transform: rotate(45deg);
+    border-bottom: none;
+    border-right: none;
+    background: #ffffff;
+    z-index: 110;
+  }
+
+  .cascader-pop:nth-of-type(3) {
+    left: 130px;
+  }
+
+  .active {
+    color: #0059ff;
+    font-weight: bold;
+  }
+
+  .disabled-color {
+    color: rgb(168, 171, 178);
+  }
+
+  .title-color {
+    color: #666;
+    display: inline-block;
+    @include ellipNowrap();
+  }
+
+  .icon-default {
+    @include iconRotate(0deg);
+  }
+
+  .icon-select {
+    @include iconRotate(-180deg);
+  }
+
+  .close-icon {
+    color: rgb(156, 159, 164);
+  }
+}
