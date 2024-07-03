@@ -10,14 +10,14 @@ const guideRouter = {
   component: Layout,
   children: [
     {
-      path: "/guide/description",
+      path: "description",
       name: "index",
       meta: { title: '项目说明' },
       component: () =>
         import("@/views/home/guide/description/index.vue"),
     }, //项目说明
     {
-      path: "/guide/toolLibrary",
+      path: "toolLibrary",
       name: "toolLibrary",
       meta: { title: '工具库合集' },
       component: () =>

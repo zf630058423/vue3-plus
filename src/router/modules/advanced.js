@@ -11,13 +11,13 @@ const advancedRouter = {
   component: () => import("@/views/home/advanced/index.vue"),
   children: [
     {
-      path: "/advanced/rowLay",
+      path: "/rowLay",
       name: "rowLay",
       meta: { title: '表单动态列布局' },
       component: () => import("@/views/home/advanced/rowLay/index.vue"),
     },
     {
-      path: "/advanced/formLay",
+      path: "/formLay",
       name: "formLay",
       meta: { title: '动态表单' },
       component: () => import("@/views/home/advanced/formLay/index.vue"),

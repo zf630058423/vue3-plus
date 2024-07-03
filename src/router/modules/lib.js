@@ -10,13 +10,13 @@ const libRouter = {
   component: Layout,
   children: [
     {
-      path: "/lib/pinia",
+      path: "pinia",
       name: "pinia",
       meta: { title: 'pinia使用' },
       component: () => import("@/views/home/lib/pinia/index.vue"),
     },
     {
-      path: "/lib/echarts",
+      path: "echarts",
       name: "echarts",
       meta: { title: 'echarts' },
       component: () => import("@/views/home/lib/echarts/index.vue"),

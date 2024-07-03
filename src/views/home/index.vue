@@ -14,7 +14,7 @@
       <el-main>
         <RouterView />
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer>vue相关知识整合</el-footer>
     </el-container>
   </el-container>
 </template>
