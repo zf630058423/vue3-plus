@@ -40,10 +40,4 @@ import col3TtLayoutCode from './col3TtLayout.vue?raw'
 import col4LayoutCode from './col4Layout.vue?raw'
 
 const remark = ref('右下角查看代码 →')
-const dataForm = ref({
-  code: '',
-  projectNumber: '',
-  projectName: '',
-  projectAddress: '',
-})
 </script>
