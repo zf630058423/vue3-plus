@@ -14,7 +14,7 @@
 <script setup>
 import { ref } from 'vue'
 
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import FromItems from './fromItems.vue'
 import fromItemsCode from './fromItems.vue?raw'
 

@@ -16,7 +16,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import LinearGradient from './linearGradient.vue'
 import RadialGradient from './radialGradient.vue'
 import ConicGradient from './conicGradient.vue'

@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import myFun from '@/utils/fun'
 
 const titleValue = ref('')

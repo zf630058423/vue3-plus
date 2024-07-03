@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import CodeReview from '@/components/codeReview/code-review.vue'
+import CodeReview from '@/layouts/codeReview/code-review.vue'
 
 const props = defineProps({
   source: {

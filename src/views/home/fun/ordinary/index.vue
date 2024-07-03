@@ -24,7 +24,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import { debounce2 } from './funjs/debounce-throttle'
 import noRepeatRandomCode from './funjs/no-repeat-random.js?raw'
 import recursionCode from './funjs/recursion.js?raw'

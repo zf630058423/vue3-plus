@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import TreeCascader from './components/TreeCascader'
 import treeCascaderCode from './components/TreeCascader?raw'
 </script>

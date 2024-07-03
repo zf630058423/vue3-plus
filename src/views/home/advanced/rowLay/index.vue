@@ -28,7 +28,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import FormTitle from './formTitle.vue'
 import Col3Layout from './col3Layout.vue'
 import Col3TtLayout from './col3TtLayout.vue'

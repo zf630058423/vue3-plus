@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import TransitionList from './TransitionList.vue'
 import TransitionList2 from './TransitionList2.vue'
 import TransitionTest from './TransitionTest.vue'

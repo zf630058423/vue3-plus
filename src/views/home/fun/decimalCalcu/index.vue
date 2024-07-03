@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import DecCalcu from './decCalcu.vue'
 import mathCode from './math.js?raw'
 </script>

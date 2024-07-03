@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import AmountInput from './compontent/amountInput.vue'
 import PercenInput from './compontent/percenInput.vue'
 import LinkInput from './compontent/linkInput.vue'

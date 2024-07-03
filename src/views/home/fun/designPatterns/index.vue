@@ -13,7 +13,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import singlePatternCode from './patternJs/single-pattern.js?raw' //单例模式
 import commonPatternCode from './patternJs/common-pattern.js?raw' //命令模式
 import strategyPatternCode from './patternJs/strategy-pattern.js?raw' //策略模式

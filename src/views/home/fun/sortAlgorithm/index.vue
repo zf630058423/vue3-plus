@@ -13,7 +13,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 
 import bubbleSortCode from './sortJs/bubble-sort.js?raw' //冒泡排序
 import quickSortCode from './sortJs/quick-sort.js?raw' //快速排序

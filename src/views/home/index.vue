@@ -21,9 +21,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import NavMenu from '@/components/nav/navMenu.vue'
-import RightHeader from '@/components/header/rightHeader.vue'
-import Breadcrumb from '@/components/breadCrumb/index.vue'
+import NavMenu from '@/layouts/nav/navMenu.vue'
+import RightHeader from '@/layouts/header/rightHeader.vue'
+import Breadcrumb from '@/layouts/breadCrumb/index.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()

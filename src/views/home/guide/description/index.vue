@@ -4,10 +4,8 @@
     <h5>本项目仅供自己学习参考使用</h5>
     <div class="descript_content">
       <p>
-        集成了ElementUI组件库，目前支持除table外的所有Element系列组件，使用方式几乎跟Element一样，因此这部分你完全可以参照
-        <a target="_blank" href="https://element.eleme.cn/#/zh-CN/component/installation"
-          >ElementUI官网</a
-        >
+        集成了ElementPlus组件库，目前支持除table外的所有Element系列组件，使用方式几乎跟Element一样，因此这部分你完全可以参照
+        <a target="_blank" href="https://element-plus.org/zh-CN/">Element Plus官网</a>
       </p>
       <p>
         集成了css样式预处理器sass，可以参照

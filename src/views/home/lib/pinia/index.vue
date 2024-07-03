@@ -20,7 +20,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import piniaMdCode from './pinia.md?raw'
 import Counter from './compontent/counter.vue'
 import piniaCode from './compontent/counter.vue?raw'

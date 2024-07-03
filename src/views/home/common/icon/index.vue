@@ -58,7 +58,7 @@
   </div>
 </template>
 <script setup>
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import zfIconCode from './compontent/zfIcon.vue?raw'
 </script>
 <style lang="scss" scoped>

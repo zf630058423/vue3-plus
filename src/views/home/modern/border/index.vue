@@ -20,7 +20,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import BorderRadius from './borderRadius.vue'
 import BorderBox1 from './borderBox1.vue'
 import BorderBox2 from './borderBox2.vue'

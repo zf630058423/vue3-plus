@@ -7,7 +7,7 @@
       :disabled="disabled"
       @focus="focusHandler"
       @blur="blurHandler"
-      :style="{ width: props.width + 'px' }"
+      :style="{ width: props.width + 'px', height: props.height + 'px' }"
     >
     </el-input>
   </div>
@@ -27,6 +27,10 @@ const props = defineProps({
   width: {
     type: Number,
     default: 200,
+  },
+  height: {
+    type: Number,
+    default: 32,
   },
   placeholder: {
     type: String,

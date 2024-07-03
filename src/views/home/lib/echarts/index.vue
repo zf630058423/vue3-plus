@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup>
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import LineChart from './compontent/lineEcharts.vue'
 import lineChartCode from './compontent/lineEcharts.vue?raw'
 
