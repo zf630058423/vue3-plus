@@ -6,7 +6,11 @@
         <Zf-Icon icon="fa-copy" color="#666" @click="handleCopy(code, $event)" />
       </el-tooltip>
       <el-tooltip :content="showCodeContent" placement="top-start">
-        <Zf-Icon :icon="showCodeIcon" @click="handeShowCode" />
+        <Zf-Icon
+          icon="fa-angle-right"
+          :class="showCode ? 'icon-down' : 'icon-right'"
+          @click="handeShowCode"
+        />
       </el-tooltip>
     </div>
     <div class="code-palce-container" :class="{ 'show-code': showCode }">
@@ -37,8 +41,6 @@ const props = defineProps({
 const showCode = ref(false)
 
 const showCodeContent = computed(() => (!showCode.value === true ? '显示代码' : '隐藏代码'))
-
-const showCodeIcon = computed(() => (showCode.value ? 'fa-angle-down' : 'fa-angle-right'))
 
 const handeShowCode = () => {
   showCode.value = !showCode.value
@@ -78,16 +80,31 @@ const handleCopy = (text, event) => {
       font-size: 18px;
       padding: 10px 20px;
     }
+
+    .icon-right {
+      transform: rotate(0deg);
+      transition: transform 0.25s;
+    }
+
+    .icon-down {
+      transform: rotate(90deg);
+      transition: transform 0.25s;
+    }
   }
 
   .code-palce-container {
     width: 100%;
     height: 0;
-    overflow: hidden;
-    transition: all linear 0.1s;
+    transition: 0.22s;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
 
     &.show-code {
       height: 100%;
+      transition: 0.22s;
+      opacity: 1;
+      transform: scaleY(1);
     }
   }
 }

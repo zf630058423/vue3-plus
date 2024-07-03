@@ -8,16 +8,16 @@ const advancedRouter = {
   path: "/advanced", //高级组件
   name: "advanced",
   meta: { title: '高级组件' },
-  component: () => import("@/views/home/advanced/index.vue"),
+  component: Layout,
   children: [
     {
-      path: "/rowLay",
+      path: "rowLay",
       name: "rowLay",
       meta: { title: '表单动态列布局' },
       component: () => import("@/views/home/advanced/rowLay/index.vue"),
     },
     {
-      path: "/formLay",
+      path: "formLay",
       name: "formLay",
       meta: { title: '动态表单' },
       component: () => import("@/views/home/advanced/formLay/index.vue"),

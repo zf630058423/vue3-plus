@@ -19,7 +19,6 @@
 <script setup>
 import { computed } from 'vue'
 import FormTitle from './formTitle.vue'
-import { ElRow, ElCol } from 'element-plus'
 
 const props = defineProps({
   //是否存在标题

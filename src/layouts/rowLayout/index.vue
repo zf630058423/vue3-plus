@@ -65,7 +65,7 @@ const props = defineProps({
   align-items: flex-start;
   border: 1px solid #f2f2f2;
   margin: 8px 0;
-  height: calc(100% - 16px);
+  // height: calc(100% - 16px);
 
   &_title {
     font-weight: bold;

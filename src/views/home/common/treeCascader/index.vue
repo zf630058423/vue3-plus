@@ -8,7 +8,7 @@
       :componentName="comName"
       :childComName="childComName"
     >
-      <TreeCascader />
+      <TreeCascader @activeItemClick="activeItemClick" />
     </RowLayout>
   </div>
 </template>
@@ -23,6 +23,10 @@ import treePanesCode from './components/TreePanes?raw'
 const comName = ref('父组件TreeCascader')
 
 const childComName = ref('子组件TreePanes')
+
+const activeItemClick = (item) => {
+  console.log('activeItemClick', item)
+}
 </script>
 
 <style lang="scss" scoped>

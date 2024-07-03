@@ -8,7 +8,7 @@
       :remark="remark"
       :source="colLayoutCode"
     ></RowLayout>
-    <RowLayout title="3、一行三列，包含标题" :remark="remark" :source="colLayoutCode">
+    <RowLayout title="3、一行三列，包含标题" :remark="remark" :source="col3LayoutCode">
       <Col3Layout></Col3Layout>
     </RowLayout>
 
