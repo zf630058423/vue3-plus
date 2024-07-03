@@ -4,7 +4,13 @@
     <div class="row-layout_remark row_line" v-if="props.remark">备注： {{ props.remark }}</div>
     <div class="row-layout_compontent row_content">
       <slot></slot>
-      <CodeReview :code="props.source"></CodeReview>
+      <slot name="content"></slot>
+      <CodeReview :code="props.source" :componentName="props.componentName"></CodeReview>
+      <CodeReview
+        v-if="props.childSource"
+        :componentName="props.childComName"
+        :code="props.childSource"
+      ></CodeReview>
     </div>
   </div>
 </template>
@@ -13,7 +19,19 @@
 import CodeReview from '@/layouts/codeReview/code-review.vue'
 
 const props = defineProps({
+  componentName: {
+    type: String,
+    default: '',
+  },
+  childComName: {
+    type: String,
+    default: '',
+  },
   source: {
+    type: String,
+    default: '',
+  },
+  childSource: {
     type: String,
     default: '',
   },
@@ -47,6 +65,7 @@ const props = defineProps({
   align-items: flex-start;
   border: 1px solid #f2f2f2;
   margin: 8px 0;
+  height: calc(100% - 16px);
 
   &_title {
     font-weight: bold;
