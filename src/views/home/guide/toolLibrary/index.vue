@@ -1,6 +1,6 @@
 <template>
   <div class="tollibary-com">
-    <h2>前端 JavaScript 必会工具库合集</h2>
+    <h2>前端Web开发常用工具库合集</h2>
     <div class="compontent-content">
       <el-input
         class="title-input"
@@ -231,6 +231,30 @@ const dataList = ref([
     title: 'webGL官网',
     officialWebsite: 'http://www.hewebgl.com/',
     chinaWebsite: 'http://www.hewebgl.com/article/articledir/1',
+  },
+  {
+    id: 31,
+    title: 'VueUse Vue组合式工具集',
+    officialWebsite: 'https://v4-11-2.vueuse.org/',
+    chinaWebsite: 'https://vueuse.nodejs.cn/',
+  },
+  {
+    id: 32,
+    title: 'Element Plus 基于Vue3面向设计师和开发者的组件库',
+    officialWebsite: 'https://element-plus.org',
+    chinaWebsite: 'https://element-plus.org/zh-CN/',
+  },
+  {
+    id: 33,
+    title: 'Vxe Table 组件库',
+    officialWebsite: 'https://vxetable.cn/#/start/install',
+    chinaWebsite: 'https://vxetable.cn/#/start/install',
+  },
+  {
+    id: 34,
+    title: 'ag-grid 组件库',
+    officialWebsite: 'https://www.ag-grid.com/',
+    chinaWebsite: 'https://www.itxst.com/ag-grid/tutorial.html',
   },
 ])
 
