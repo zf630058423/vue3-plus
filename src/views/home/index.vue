@@ -1,21 +1,21 @@
 <template>
+  <!-- 右侧主体 -->
   <el-container>
-    <!-- 左侧导航 -->
-    <NavMenu />
-    <!-- 右侧主体 -->
+    <el-header>
+      <!-- 退出按钮 -->
+      <!-- <el-button class="exit" type="primary" @click="goBack()">退出</el-button> -->
+      <RightHeader />
+    </el-header>
     <el-container>
-      <el-header>
+      <!-- 左侧导航 -->
+      <NavMenu />
+      <el-main>
         <!-- 面包屑 -->
         <Breadcrumb />
-        <!-- 退出按钮 -->
-        <!-- <el-button class="exit" type="primary" @click="goBack()">退出</el-button> -->
-        <RightHeader />
-      </el-header>
-      <el-main>
         <RouterView />
       </el-main>
-      <el-footer>vue相关知识整合</el-footer>
     </el-container>
+    <el-footer>vue相关知识整合</el-footer>
   </el-container>
 </template>
 
@@ -64,7 +64,7 @@ const goBack = () => {
   text-align: center;
   overflow: hidden;
   padding: 8px;
-  height: calc(100% - 120px);
+  // height: calc(100% - 120px);
 }
 
 .container-content {

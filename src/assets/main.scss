@@ -1,4 +1,6 @@
-// @import './base.scss';  
-@import './global.scss';
-@import './contentFlow.scss';
+// @import './base.scss';
+// @import './global.scss';
+// @import './contentFlow.scss';
 
+@use './global.scss';
+@use './contentFlow.scss';

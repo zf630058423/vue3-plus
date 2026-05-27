@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import RowLayout from '@/components/rowLayout/index.vue'
+import RowLayout from '@/layouts/rowLayout/index.vue'
 import ImageUpload from './compontent/imageUpload.vue'
 
 //导出为模版字符串
