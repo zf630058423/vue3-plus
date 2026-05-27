@@ -1,24 +1,25 @@
 <template>
   <div class="form-layout content_overflow">
     <RowLayout title="1、动态生成表单" :remark="remark" :source="fromItemsCode">
-      <FromItems
-        :formItems="formItems"
-        :rules="rules"
-        ref="FormItems"
-        :form_Data="form_Data"
-      ></FromItems>
+      <CSForm v-model:formRef="formRef" :schema="schema" :model="formData" :span="8">
+        <template #formItem-collectNum>
+          <el-input type="text"></el-input>
+        </template>
+      </CSForm>
     </RowLayout>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 import RowLayout from '@/layouts/rowLayout/index.vue'
-import FromItems from './fromItems.vue'
-import fromItemsCode from './fromItems.vue?raw'
+import CSForm from './CSForm/src/index.jsx'
+import fromItemsCode from './CSForm/src/index.jsx?raw'
 
 const remark = ref('右下角查看代码 →')
+
+const formRef = ref()
 
 const formItems = ref([
   {
@@ -84,14 +85,54 @@ const formItems = ref([
   },
 ])
 
-const form_Data = ref({
-  cityName: '',
-  time1: '',
-  city: '',
-  sports: '',
+const formData = ref({
+  numCode: null,
+  subPrintNum: null,
+  poNum: null,
+  collectNum: null,
+  materialCode: null,
 })
 
-const rules = ref({
-  cityName: [{ required: true, message: '请输入cityName', trigger: 'blur' }],
+const schema = computed(() => {
+  return [
+    {
+      component: 'Input',
+      label: '单号',
+      prop: 'numCode',
+      componentProps: {
+        disabled: true,
+      },
+    },
+    {
+      component: 'Input',
+      label: '辅号',
+      prop: 'subPrintNum',
+      componentProps: { disabled: true },
+    },
+    {
+      component: 'Input',
+      label: '采购单号',
+      prop: 'poNum',
+      componentProps: { disabled: true },
+    },
+    {
+      label: '领料单号',
+      required: false,
+      formItemProps: {
+        slots: true,
+      },
+      prop: 'collectNum',
+      componentProps: {
+        disabled: false,
+      },
+    },
+    {
+      component: 'Input',
+      label: '物料编码',
+      required: true,
+      prop: 'materialCode',
+      componentProps: { disabled: true },
+    },
+  ]
 })
 </script>

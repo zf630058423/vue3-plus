@@ -63,8 +63,8 @@ const props = defineProps({
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  border: 1px solid #f2f2f2;
-  margin: 8px 0;
+  /* border: 1px solid #f2f2f2; */
+  /* margin: 8px 0; */
   // height: calc(100% - 16px);
 
   &_title {

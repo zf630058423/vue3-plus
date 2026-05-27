@@ -1,0 +1,46 @@
+.basic-form {
+  .el-form-item {
+    margin-bottom: 6px;
+  }
+
+  .el-range-editor.is-disabled input {
+    background-color: transparent;
+  }
+
+  .el-button {
+    &:not(.is-link) {
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+
+  .el-form-item__label {
+    min-width: 80px;
+    box-sizing: border-box;
+    &.is-required::before {
+      color: var(--el-color-danger);
+      content: '*';
+      margin-right: 4px;
+    }
+  }
+
+  .label-width-auto {
+    .el-form-item__label {
+      min-width: unset;
+      &-wrap {
+        margin-left: unset !important;
+      }
+    }
+  }
+
+  .no-label {
+    .el-form-item__content {
+      margin-left: 6px !important;
+    }
+  }
+
+  .el-input-group__prepend,
+  .el-input-group__append {
+    padding: 0 8px;
+  }
+}

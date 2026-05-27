@@ -31,3 +31,9 @@ const getBreadcrumb = (matched) => {
   lists.value = matched
 }
 </script>
+<style lang="scss" scoped>
+.el-breadcrumb {
+  height: 35px;
+  line-height: 35px;
+}
+</style>

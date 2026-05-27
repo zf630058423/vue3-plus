@@ -4,8 +4,9 @@
 
 .content_overflow {
   overflow: auto;
-  height: 100%;
-  padding: 8px;
+  height: calc(100% - 36px);
+  border: 1px solid #f2f2f2;
+  padding: 4px 0;
 }
 
 .ordinary-head {
